@@ -1,18 +1,12 @@
-/* =======================
-      АДАПТАЦИЯ ДО 900px
-======================= */
+
 @media (max-width: 900px) {
   .main {
-    grid-template-columns: 1fr 2fr 1fr; /* убираем один столбец */
+    grid-template-columns: 1fr 2fr 1fr; 
   }
 }
 
-/* =======================
-      АДАПТАЦИЯ ДО 768px
-======================= */
 @media (max-width: 768px) {
 
-  /* Шапка в столбец */
   .header {
     grid-template-columns: 1fr;
     text-align: center;
@@ -26,28 +20,24 @@
 
   .greeting {
     justify-content: center;
-    font-size: 16px;
+    padding: 10px;
   }
 
-  /* Меню — в столбец */
   .menu {
     flex-direction: column;
     gap: 10px;
-    padding: 10px 0;
+    padding: 10px;
   }
 
-  .menu a {
-    font-size: 18px;
-  }
-
-  /* Главная сетка — превращаем в 2 столбца */
   .main {
-    grid-template-columns: 1fr 2fr;
+    display: flex !important;
+    flex-direction: column !important;
+    border-bottom: none;
   }
 
-  /* Чтобы не ломалось */
   .main > * {
-    border-right: none;
+    width: 100%;
+    border-right: none !important;
     border-bottom: 1px solid #000;
   }
 
@@ -55,53 +45,54 @@
     border-bottom: none;
   }
 
+
   .hero {
     width: 100%;
     margin: 10px 0;
   }
-}
 
-/* =======================
-      АДАПТАЦИЯ ДО 480px
-======================= */
-@media (max-width: 480px) {
-
-  /* Всё в один столбец */
-  .main {
-    grid-template-columns: 1fr;
-  }
-
-  .header,
-  .menu,
-  .footer {
-    text-align: center;
-  }
-
-  .logo img {
-    width: 30px;
-  }
-
-  .logo {
-    padding: 15px;
-    font-size: 18px;
-  }
-
-  .greeting {
-    padding: 15px;
-    font-size: 14px;
-  }
-
-  /* Упрощаем отступы */
-  .main > * {
+  .content,
+  .side-menu,
+  .news,
+  .contacts {
     padding: 15px;
   }
 
-  /* Галерея адаптив */
+
   .gallery-grid {
     grid-template-columns: 1fr;
   }
 
+  .gallery {
+    padding: 15px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .logo img {
+    width: 28px;
+  }
+
+  .logo span {
+    font-size: 18px;
+  }
+
+  .greeting {
+    font-size: 14px;
+  }
+
+  .menu a {
+    font-size: 16px;
+  }
+
+  p, li {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
   .gallery h2 {
-    font-size: 1.4em;
+    font-size: 20px;
   }
 }
